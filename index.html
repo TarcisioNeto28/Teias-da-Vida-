@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teias da Vida</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="overlay">
+      <div class="app">
+        <header>
+          <h1>💬 Teias da Vida</h1>
+          <p>Você nunca está sozinho.</p>
+          <p>Atendimento de segunda a sexta, das 07h às 17h.</p>
+        </header>
+
+        <div id="chat-box"></div>
+
+        <div class="input-area">
+          <input
+            type="text"
+            id="user-input"
+            placeholder="Como você está se sentindo hoje?"
+          />
+          <button onclick="sendMessage()">Enviar</button>
+        </div>
+
+        <div class="actions">
+          <button onclick="sendToWhatsApp()">
+            📲 Falar com o especialista
+          </button>
+          <button onclick="callCAPS()">
+            📞 Ligar para o CAPS I Areia Branca/RN
+          </button>
+        </div>
+
+        <div id="status-message" class="status"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

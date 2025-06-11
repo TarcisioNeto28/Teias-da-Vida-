@@ -1,0 +1,98 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  height: 100%;
+}
+
+.overlay {
+  background: url('https://voltaliagroup-my.sharepoint.com/:i:/g/personal/t_neto_voltalia_com/EdLK8euFKkxAi6_Nt5-2WlwBTaKDSqSWLT_CZ4i3cFZ24A?e=xn6TT5') no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app {
+  width: 100%;
+  max-width: 500px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+#chat-box {
+  height: 250px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.message {
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 80%;
+}
+
+.user {
+  background-color: #def3ff;
+  margin-left: auto;
+  text-align: right;
+}
+
+.bot {
+  background-color: #e8f5e9;
+  margin-right: auto;
+  text-align: left;
+}
+
+.input-area {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+button {
+  padding: 10px;
+  background-color: #2b7a78;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #205c5a;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.status {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #d32f2f;
+}
