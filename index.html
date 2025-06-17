@@ -1,34 +1,53 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Teias da Vida</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>style="background-image: url('WhatsApp-Image-2025-06-10-at-19.19.08.jpg'); background-size: cover; background-position: center;">
-    <div class="overlay">
-      <div class="container"
-          <h1>💬 Teias da Vida</h1>
-          <p>Você nunca está sozinho.</p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teias da Vida</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body style="background-image: url('WhatsApp Image 2025-06-10 at 19.19.08.jpeg'); background-size: cover; background-position: center;">
+  <div class="overlay">
+    <div class="container">
+      <h1>Teias da Vida</h1>
+      <p>Você nunca está sozinho.</p>
           <p>Atendimento de segunda a sexta, das 07h às 17h.</p>
-        <div class="chat-box" id="chat-box">
-        <div class="message bot">Olá! Bem-vindo ao CAPS de Areia Branca-RN. Estamos aqui para ajudar você. Deseja conversar?</div>
-          <button onclick="sendMessage()">Enviar</button>
-        </div>
-        <div class="actions">
-          <button onclick="sendToWhatsApp()">
-            📲 Falar com o especialista
-          </button>
-          <button onclick="callCAPS()">
-            📞 Ligar para o CAPS I Areia Branca/RN
-          </button>
-        </div>
-
-        <div id="status-message" class="status"></div>
+      <div class="chat-box" id="chat-box">
+        <div class="message bot" id="bot-message">Olá! Bem-vindo ao CAPS de Areia Branca-RN. Estamos aqui para ajudar você. Deseja conversar?</div>
+      </div>
+      <div class="input-box">
+        <input type="text" id="user-input" placeholder="Digite sua mensagem..." />
+        <button onclick="sendMessage()">Enviar</button>
+      </div>
+      <div class="actions">
+        <a href="https://wa.me/558499" target="_blank" class="whatsapp-button" id="whatsapp-link">Falar com especialista via WhatsApp</a>
+        <a href="tel:+558433333333" class="call-button" id="call-link">Ligar para o CAPS</a>
       </div>
     </div>
+  </div>
 
-    <script src="script.js"></script>
-  </body>
+  <script src="script.js"></script>
+  <script>
+    // Restrição de horário: Segunda a Sexta, das 07:00 às 17:00
+    const agora = new Date();
+    const diaSemana = agora.getDay(); // 0 = Domingo, 1 = Segunda, ..., 6 = Sábado
+    const hora = agora.getHours();
+
+    const foraDoHorario = (diaSemana === 0 || diaSemana === 6 || hora < 7 || hora >= 17);
+
+    if (foraDoHorario) {
+      document.getElementById('bot-message').innerText = 'Olá! Nosso atendimento é de segunda a sexta, das 07:00 às 17:00. Por favor, entre em contato dentro desse horário.';
+
+      // Opcional: Desabilitar os botões de ação fora do horário
+      document.getElementById('whatsapp-link').style.pointerEvents = 'none';
+      document.getElementById('whatsapp-link').style.opacity = '0.5';
+      document.getElementById('call-link').style.pointerEvents = 'none';
+      document.getElementById('call-link').style.opacity = '0.5';
+
+      // Opcional: Desabilitar envio de mensagens no chat
+      document.querySelector('.input-box input').disabled = true;
+      document.querySelector('.input-box button').disabled = true;
+    }
+  </script>
+</body>
 </html>
